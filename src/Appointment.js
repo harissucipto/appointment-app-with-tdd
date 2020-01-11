@@ -4,6 +4,12 @@ export const Appointment = ({ customer: { firstName } }) => {
   return <div>{firstName}</div>;
 };
 
-export const AppointmentsDayView = () => (
-  <div id="appointmentsDayView"></div>
+export const AppointmentsDayView = ({ appointments }) => (
+  <div id="appointmentsDayView">
+    <ol>
+      {appointments.map(appointment => (
+        <div key={appointment.startsAt} />
+      ))}
+    </ol>
+  </div>
 );
