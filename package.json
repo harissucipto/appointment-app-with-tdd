@@ -4,7 +4,9 @@
   "description": "belajar tdd dengan membuat aplikasi appointment",
   "main": "index.js",
   "license": "MIT",
-  "test": "jest",
+  "scripts": {
+    "test": "jest"
+  },
   "dependencies": {
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
@@ -13,6 +15,7 @@
     "@babel/plugin-transform-runtime": "^7.7.6",
     "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
-    "@babel/runtime": "^7.7.7"
+    "@babel/runtime": "^7.7.7",
+    "jest": "^24.9.0"
   }
 }
