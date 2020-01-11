@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactTestUtils from 'react-dom/test-utils';
 import ReactDOM from 'react-dom';
 import {
   Appointment,
@@ -45,7 +46,7 @@ describe('AppointmentsDayView', () => {
     },
     {
       startsAt: today.setHours(13, 0),
-      customer: { firstName: 'Ashley' }
+      customer: { firstName: 'Jordan' }
     }
   ];
 
@@ -99,5 +100,12 @@ describe('AppointmentsDayView', () => {
     expect(
       container.querySelectorAll('li > button')[0].type
     ).toEqual('button');
+  });
+
+  it('renders another appointment when selected', () => {
+    render(<AppointmentsDayView appointments={appointments} />);
+    const button = container.querySelectorAll('button')[1];
+    ReactTestUtils.Simulate.click(button);
+    expect(container.textContent).toMatch('Jordan');
   });
 });
