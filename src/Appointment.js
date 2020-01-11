@@ -14,10 +14,16 @@ export const AppointmentsDayView = ({ appointments }) => (
     <ol>
       {appointments.map(appointment => (
         <li key={appointment.startsAt}>
-          {appointmentTimeOfDay(appointment.startsAt)}
+          <button type="button">
+            {appointmentTimeOfDay(appointment.startsAt)}
+          </button>
         </li>
       ))}
     </ol>
-    <p>There are no appointments scheduled for today.</p>
+    {appointments.length === 0 ? (
+      <p>There are no appointments scheduled for today.</p>
+    ) : (
+      <Appointment {...appointments[0]} />
+    )}
   </div>
 );
