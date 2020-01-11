@@ -1,0 +1,8 @@
+{
+  "name": "appointments-with-tdd",
+  "version": "1.0.0",
+  "description": "belajar tdd dengan membuat aplikasi appointment",
+  "main": "index.js",
+  "license": "MIT",
+  "test": "jest"
+}
