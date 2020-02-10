@@ -17,6 +17,9 @@ describe('Appointment', () => {
   const render = component =>
     ReactDOM.render(component, container);
 
+  const appointmentTable = () =>
+    container.querySelector('#appointmentView > table')
+
   it('renders the customer first name', () => {
     // 3 A
 
@@ -26,13 +29,13 @@ describe('Appointment', () => {
     render(<Appointment customer={customer} />);
     // yang penting body punya text dengna string yang dibawah tidak peduli berapa level
     // Assert: Check expectattaions are met
-    expect(container.textContent).toMatch('Ashley');
+    expect(appointmentTable().textContent).toMatch('Ashley');
   });
 
   it('renders another customer first name', () => {
     customer = { firstName: 'Jordan' };
     render(<Appointment customer={customer} />);
-    expect(container.textContent).toMatch('Jordan');
+    expect(appointmentTable().textContent).toMatch('Jordan');
   });
 });
 
