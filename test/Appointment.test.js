@@ -10,12 +10,12 @@ describe('Appointment', () => {
   let container;
   let customer;
 
-  const render = component =>
-    ReactDOM.render(component, container);
-
   beforeEach(() => {
     container = document.createElement('div');
   });
+
+  const render = component =>
+    ReactDOM.render(component, container);
 
   it('renders the customer first name', () => {
     // 3 A
@@ -37,7 +37,6 @@ describe('Appointment', () => {
 });
 
 describe('AppointmentsDayView', () => {
-  let container;
   const today = new Date();
   const appointments = [
     {
@@ -49,10 +48,12 @@ describe('AppointmentsDayView', () => {
       customer: { firstName: 'Jordan' }
     }
   ];
+  let container;
 
   beforeEach(() => {
     container = document.createElement('div');
   });
+
   const render = component =>
     ReactDOM.render(component, container);
 
